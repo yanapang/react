@@ -1,3 +1,5 @@
+import componentImg from './assets/components.png'
+
 const reactDescriptions = ['Apple', 'Banana', 'Carrot']
 
 function getRandomInt(max) {
@@ -22,12 +24,28 @@ function Header() {
     );
 }
 
+function ReusableComponent (props) {
+    //react get all the props as one object.
+    return (
+        <li>
+            <img src={props.image}/>
+            <h3>{props.title}</h3>
+            <p>{props.description}</p>
+        </li>
+    )
+}
+
 function App() {
     return (
         <div>
-            <Header />
+            <Header/>
             <main>
-                <h2>Time to get started!</h2>
+                <section id="core-concepts">
+                    <h2>Core Concepts</h2>
+                    <ul>
+                        <ReusableComponent title="number 1" description="desctiption here" image={componentImg}/>
+                    </ul>
+                </section>
             </main>
         </div>
     );
