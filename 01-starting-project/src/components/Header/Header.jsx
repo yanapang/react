@@ -1,3 +1,5 @@
+import './Header.css';
+
 const reactDescriptions = ['Apple', 'Banana', 'Carrot']
 
 function getRandomInt(max) {
