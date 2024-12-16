@@ -1,4 +1,5 @@
 import componentImg from './assets/components.png'
+import {CORE_CONCEPTS} from './data';
 
 const reactDescriptions = ['Apple', 'Banana', 'Carrot']
 
@@ -25,7 +26,8 @@ function Header() {
 }
 
 function ReusableComponent (props) {
-    //react get all the props as one object.
+    //react get all the props as one object. (props)
+    //or it can also be used with destructuring javascript methods ({title, description, image})
     return (
         <li>
             <img src={props.image}/>
@@ -43,7 +45,19 @@ function App() {
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <ReusableComponent title="number 1" description="desctiption here" image={componentImg}/>
+                        <ReusableComponent
+                            title={CORE_CONCEPTS[0].title}
+                            description={CORE_CONCEPTS[0].description}
+                            image={CORE_CONCEPTS[0].image}
+                        />
+                        <ReusableComponent {...CORE_CONCEPTS[1]} />
+                        {/*
+                            shorter version. if the data given has same name,
+                            prop values can be used like this.
+                            and this is how to use documentation in jsx :)
+                        */}
+                        <ReusableComponent {...CORE_CONCEPTS[2]} />
+                        <ReusableComponent {...CORE_CONCEPTS[3]} />
                     </ul>
                 </section>
             </main>
