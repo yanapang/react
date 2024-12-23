@@ -1,11 +1,13 @@
-export default function CoreConcepts (props) {
-    //react get all the props as one object. (props)
-    //or it can also be used with destructuring javascript methods ({title, description, image})
+import {CORE_CONCEPTS} from "../data";
+import CoreConcept from "./CoreConcept";
+
+export default function CoreConcepts() {
     return (
-        <li>
-            <img src={props.image}/>
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
-        </li>
+        <section id="core-concepts">
+            <h2>Core Concepts</h2>
+            <ul>
+                {CORE_CONCEPTS.map((conceptItem) => (<CoreConcept key={conceptItem.title} {...conceptItem} />))}
+            </ul>
+        </section>
     )
 }
