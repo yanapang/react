@@ -4,6 +4,10 @@ import CoreConcepts from "./components/CoreConcepts";
 import TabButton from "./components/TabButton";
 
 function App() {
+    function handleSelect(selectedButton) {
+        console.log(selectedButton)
+    }
+
     return (
         <div>
             <Header/>
@@ -16,12 +20,12 @@ function App() {
                             description={CORE_CONCEPTS[0].description}
                             image={CORE_CONCEPTS[0].image}
                         />
-                        <CoreConcepts {...CORE_CONCEPTS[1]} />
                         {/*
                             shorter version. if the data given has same name,
                             prop values can be used like this.
                             and this is how to use documentation in jsx :)
                         */}
+                        <CoreConcepts {...CORE_CONCEPTS[1]} />
                         <CoreConcepts {...CORE_CONCEPTS[2]} />
                         <CoreConcepts {...CORE_CONCEPTS[3]} />
                     </ul>
@@ -29,8 +33,12 @@ function App() {
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton>Components</TabButton>
+                        <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[0].title)}>{CORE_CONCEPTS[0].title}</TabButton>
+                        <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[1].title)}>{CORE_CONCEPTS[1].title}</TabButton>
+                        <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[2].title)}>{CORE_CONCEPTS[2].title}</TabButton>
+                        <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[3].title)}>{CORE_CONCEPTS[3].title}</TabButton>
                     </menu>
+                    Dynamic Content
                 </section>
             </main>
         </div>
