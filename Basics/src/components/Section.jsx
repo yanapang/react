@@ -1,6 +1,7 @@
-export default function Section ({title, id, children}) {
+export default function Section ({title, children, ...props}) {
+    {/* ...props allows scalable prop values */}
     return (
-        <section id={id}>
+        <section {...props}>
             <h2>{title}</h2>
             {children}
         </section>

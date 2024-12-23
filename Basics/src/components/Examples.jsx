@@ -30,22 +30,22 @@ export default function Examples() {
             <menu>
                 <TabButton
                     isSelected={selectedTopic === CORE_CONCEPTS[0].title.toLowerCase()}
-                    onSelect={() => handleSelect(CORE_CONCEPTS[0].title.toLowerCase())}>
+                    onClick={() => handleSelect(CORE_CONCEPTS[0].title.toLowerCase())}>
                     {CORE_CONCEPTS[0].title}
                 </TabButton>
                 <TabButton
                     isSelected={selectedTopic === CORE_CONCEPTS[1].title.toLowerCase()}
-                    onSelect={() => handleSelect(CORE_CONCEPTS[1].title.toLowerCase())}>
+                    onClick={() => handleSelect(CORE_CONCEPTS[1].title.toLowerCase())}>
                     {CORE_CONCEPTS[1].title}
                 </TabButton>
                 <TabButton
                     isSelected={selectedTopic === CORE_CONCEPTS[2].title.toLowerCase()}
-                    onSelect={() => handleSelect(CORE_CONCEPTS[2].title.toLowerCase())}>
+                    onClick={() => handleSelect(CORE_CONCEPTS[2].title.toLowerCase())}>
                     {CORE_CONCEPTS[2].title}
                 </TabButton>
                 <TabButton
                     isSelected={selectedTopic === CORE_CONCEPTS[3].title.toLowerCase()}
-                    onSelect={() => handleSelect(CORE_CONCEPTS[3].title.toLowerCase())}>
+                    onClick={() => handleSelect(CORE_CONCEPTS[3].title.toLowerCase())}>
                     {CORE_CONCEPTS[3].title}
                 </TabButton>
             </menu>
