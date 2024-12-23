@@ -31,19 +31,7 @@ function App() {
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <CoreConcepts
-                            title={CORE_CONCEPTS[0].title}
-                            description={CORE_CONCEPTS[0].description}
-                            image={CORE_CONCEPTS[0].image}
-                        />
-                        {/*
-                            shorter version. if the data given has same name,
-                            prop values can be used like this.
-                            and this is how to use documentation in jsx :)
-                        */}
-                        <CoreConcepts {...CORE_CONCEPTS[1]} />
-                        <CoreConcepts {...CORE_CONCEPTS[2]} />
-                        <CoreConcepts {...CORE_CONCEPTS[3]} />
+                        {CORE_CONCEPTS.map((conceptItem) => (<CoreConcepts {...conceptItem} />))}
                     </ul>
                 </section>
                 <section id="examples">
